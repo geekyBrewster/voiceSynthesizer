@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Voice Synthesizer</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <!-- Materialize CSS -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Voice Synthesizer</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+      <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+      <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+      <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="row">
+  <h3 class="header">Pre-Built Responses</h3>
+</div>
+
+<div class="row">
+  <h4>Add New Response:</h4>
+   <form class="col s8 offset-s2">
+     <div class="row">
+       <div class="input-field col s12">
+         <label>Enter text for response:</label>
+         <textarea id="response" class="materialize-textarea" data-length="100"></textarea>
+       </div>
+     </div>
+     <a href="#" id="add" class="waves-effect waves-light btn">Add Response</a>
+   </form>
+ </div>
+
+<hr>
+
+<div class="row">
+  <h4>Responses:</h4>
+  <div class="col s6 m4">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text" id="laryngitis">
+        <span class="card-title">I can't talk. I have laryngitis.</span>
+      </div>
+      <div class="card-action">
+        <button class="say" class="waves-effect waves-light btn" data-id="laryngitis">Speak</button>
+      </div>
+    </div>
+  </div>
+  <div class="col s6 m4">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text" id="no">
+        <span class="card-title">No, thank you.</span>
+      </div>
+      <div class="card-action">
+        <button class="say" class="waves-effect waves-light btn" data-id="no">Speak</button>
+      </div>
+    </div>
+  </div>
+  <div class="col s6 m4">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text" id="yes">
+        <span class="card-title">Yes, please.</span>
+      </div>
+      <div class="card-action">
+        <button class="say" class="waves-effect waves-light btn" data-id="yes">Speak</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- jQuery first then Materialize JS. -->
+  <script src="../vendors/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../scripts/client.js"></script>
+</body>
+</html>
