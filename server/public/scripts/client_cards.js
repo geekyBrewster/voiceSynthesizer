@@ -13,7 +13,7 @@ $( '#addBtn' ).on( 'click', function(){
   // get user input and put in an object
 
   var responseToSend = {
-    response_id: $('#nresponse_id').val(),
+    response_id: $('#response_id').val(),
     response_text: $('#response_text').val()
   };
   saveResponse( responseToSend );
@@ -21,7 +21,7 @@ $( '#addBtn' ).on( 'click', function(){
 }); //end addButton on click
 
 // add delete button click
-$('.deleteBtn').on('click', function(){
+$('#viewResponses').on('click', '.deleteBtn', function(){
   console.log("Delete button clicked with id: ", $(this).data('id'));
   $.ajax({
     type: 'DELETE',
