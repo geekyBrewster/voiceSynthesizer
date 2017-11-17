@@ -98,7 +98,7 @@ app.delete('/responses/:id', function(req, res){
 // Serve back static files by default
 app.get('/*', function(req, res){
   var file = req.params[0] || 'views/index.html';
-  res.sendFile(path.join(__dirname, '/public', file));
+  res.sendFile(path.join(__dirname, '/public/', file));
 });
 
 // Start listenting for requests at given PORT
