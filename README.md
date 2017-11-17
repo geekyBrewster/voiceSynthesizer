@@ -4,6 +4,7 @@ Building a text-to-speech app on a day I lost my voice due to laryngitis
 ## Technologies used
 - HTML / CSS (Materialize)
 - Javascript & jQuery
+- PostgreSQL
 - HTML5 SpeechSynthesis API
 
 ## Acknowledgements

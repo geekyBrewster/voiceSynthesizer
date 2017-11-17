@@ -41,6 +41,58 @@ app.get('/responses', function(req, res){
   }); // end pool
 }); // end of GET
 
+// Add new response data to the DB
+app.post('/responses', function(req, res){
+  pool.connect(function(errorConnectingToDatabase, db, done){
+    if(errorConnectingToDatabase) {
+      console.log('Error connecting to the database.');
+      res.sendStatus(500);
+    } else {
+      var response = req.body;
+      // console.log(response);
+      var id = response.response_id;
+      var text = response.response_text;
+      var queryText = 'INSERT INTO "responses" ' +
+          '("response_id", "response_text") ' +
+          'VALUES ($1, $2);';
+      db.query(queryText,[id, text], function(errorMakingQuery, result){
+        done();
+        if(errorMakingQuery) {
+          console.log('Attempted to query with', queryText);
+          console.log('Error making query');
+          res.sendStatus(500);
+        } else {
+          console.log(queryText);
+          res.send({responses: result.rows});
+        }
+      }); // end query
+    } // end if
+  }); // end pool
+}); // end of POST
+
+// Remove response from DB
+app.delete('/responses/:id', function(req, res){
+  pool.connect(function(errorConnectingToDatabase, db, done){
+    if(errorConnectingToDatabase) {
+      console.log('Error connecting to the database.');
+      res.sendStatus(500);
+    } else {
+      var id = req.params.id;
+      var queryText = 'DELETE FROM "responses" WHERE "id"=$1;';
+      db.query(queryText,[id], function(errorMakingQuery, result){
+        done();
+        if(errorMakingQuery) {
+          console.log('Attempted to query with', queryText);
+          console.log('Error making query');
+          res.sendStatus(500);
+        } else {
+          console.log(queryText);
+          res.send({responses: result.rows});
+        }
+      }); // end query
+    } // end if
+  }); // end pool
+}); // end of DELETE
 
 
 // Serve back static files by default
