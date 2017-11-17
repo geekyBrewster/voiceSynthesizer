@@ -25,26 +25,27 @@
 </nav>
 
 <div class="row">
-  <h3 class="header">Pre-Built Responses</h3>
-</div>
 
-<div class="row">
-  <h4>Add New Response:</h4>
    <form class="col s8 offset-s2">
+     <h4>Add New Response:</h4>
      <div class="row">
-       <div class="input-field col s12">
-         <label>Enter text for response:</label>
-         <textarea id="response" class="materialize-textarea" data-length="100"></textarea>
+       <div class="input-field col s8">
+         <label>Enter text:</label>
+         <textarea id="response_text" class="materialize-textarea" data-length="300"></textarea>
        </div>
+       <div class="input-field col s4">
+         <label>Enter response keyword:</label>
+         <textarea id="response_id" class="materialize-textarea" data-length="100"></textarea>
+       </div>
+        <a href="#" id="add" class="waves-effect waves-light btn">Add Response</a>
      </div>
-     <a href="#" id="add" class="waves-effect waves-light btn">Add Response</a>
+
    </form>
  </div>
 
 <hr>
-
-<div class="row">
-  <h4>Responses:</h4>
+<h4>Pre-Built Responses:</h4>
+<div class="row" id="viewResponses">
   <div class="col s6 m4">
     <div class="card blue-grey darken-1">
       <div class="card-content white-text" id="laryngitis">
@@ -52,29 +53,11 @@
       </div>
       <div class="card-action">
         <button class="say" class="waves-effect waves-light btn" data-id="laryngitis">Speak</button>
+        <button class="delete" class="waves-effect waves-light btn">Delete</button>
       </div>
     </div>
   </div>
-  <div class="col s6 m4">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text" id="no">
-        <span class="card-title">No, thank you.</span>
-      </div>
-      <div class="card-action">
-        <button class="say" class="waves-effect waves-light btn" data-id="no">Speak</button>
-      </div>
-    </div>
-  </div>
-  <div class="col s6 m4">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text" id="yes">
-        <span class="card-title">Yes, please.</span>
-      </div>
-      <div class="card-action">
-        <button class="say" class="waves-effect waves-light btn" data-id="yes">Speak</button>
-      </div>
-    </div>
-  </div>
+
 </div>
 
 
